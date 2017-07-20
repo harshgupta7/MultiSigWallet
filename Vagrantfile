@@ -6,10 +6,10 @@ if ! which eth | grep -q /usr/bin/eth || ! which solc | grep -q /usr/bin/solc; t
     DEBIAN_FRONTEND=noninteractive sudo apt-get install -y software-properties-common
     DEBIAN_FRONTEND=noninteractive sudo add-apt-repository -y ppa:ethereum/ethereum
     DEBIAN_FRONTEND=noninteractive sudo add-apt-repository -y ppa:ethereum/ethereum-dev
-    DEBIAN_FRONTEND=noninteractive sudo apt-get update
+    DEBIAN_FRONTEND=noninteractive sudo apt-get update -y
 fi
 
-DEBIAN_FRONTEND=noninteractive sudo apt-get install libboost-filesystem1.54.0 libboost-program-options1.54.0 libboost-system1.54.0 solc
+DEBIAN_FRONTEND=noninteractive sudo apt-get install -y libboost-filesystem1.54.0 libboost-program-options1.54.0 libboost-system1.54.0 solc
 
 SCRIPT
 
@@ -19,7 +19,7 @@ $fucking_locale = <<SCRIPT
 SCRIPT
 
 $dependencies = <<SCRIPT
-    DEBIAN_FRONTEND=noninteractive apt-get update
+    DEBIAN_FRONTEND=noninteractive apt-get update -y
     # pyenv
     DEBIAN_FRONTEND=noninteractive apt-get install -y curl python-dev \
         libreadline-dev libbz2-dev libssl-dev libsqlite3-dev libxslt1-dev \
